@@ -5,7 +5,7 @@ export interface UserProfile {
 }
 
 export interface FeatureRequest {
-  id: string;
+  id: number;
   title: string;
   description: string;
   upvotes: number;
