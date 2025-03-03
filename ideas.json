@@ -1,56 +1,602 @@
 [
   {
     "id": 1,
-    "title": "Mobile App Offline Mode",
-    "description": "Enable users to access core features without an internet connection.",
-    "upvotes": 125,
-    "downvotes": 15,
-    "createdAt": "2024-03-18T10:00:00Z",
-    "updatedAt": "2024-03-19T14:30:00Z"
+    "title": "Dark Mode Theme",
+    "description": "Implement a dark mode theme option for better usability in low light conditions and user preference.",
+    "upvotes": 35,
+    "downvotes": 12,
+    "priority": "High",
+    "author": {
+      "id": "1",
+      "name": "Alice Johnson",
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    "createdAt": "2024-07-20T10:00:00Z",
+    "updatedAt": "2024-07-20T10:00:00Z"
   },
   {
     "id": 2,
-    "title": "Integrate with Third-Party Calendar",
-    "description": "Allow users to sync events with their preferred calendar application.",
-    "upvotes": 88,
-    "downvotes": 22,
-    "createdAt": "2024-03-17T15:30:00Z",
-    "updatedAt": "2024-03-18T09:15:00Z"
+    "title": "Two-Factor Authentication",
+    "description": "Add two-factor authentication for enhanced account security and protection against unauthorized access.",
+    "upvotes": 28,
+    "downvotes": 39,
+    "priority": "High",
+    "author": {
+      "id": "2",
+      "name": "Bob Smith",
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    "createdAt": "2024-07-20T10:05:00Z",
+    "updatedAt": "2024-07-20T10:05:00Z"
   },
   {
     "id": 3,
-    "title": "Advanced Search Functionality",
-    "description": "Implement filters and sorting options for search results.",
-    "upvotes": 150,
-    "downvotes": 10,
-    "createdAt": "2024-03-16T08:45:00Z",
-    "updatedAt": "2024-03-17T12:00:00Z"
+    "title": "Customizable Profile Backgrounds",
+    "description": "Allow users to customize their profile backgrounds with images or colors for personalization.",
+    "upvotes": 15,
+    "downvotes": 25,
+    "priority": "Medium",
+    "author": {
+      "id": "3",
+      "name": "Charlie Davis",
+      "profileImage": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    "createdAt": "2024-07-20T10:10:00Z",
+    "updatedAt": "2024-07-20T10:10:00Z"
   },
   {
     "id": 4,
-    "title": "Customizable Dashboard Widgets",
-    "description": "Allow users to personalize their dashboard with relevant widgets.",
-    "upvotes": 65,
-    "downvotes": 35,
-    "createdAt": "2024-03-15T13:20:00Z",
-    "updatedAt": "2024-03-16T16:40:00Z"
+    "title": "Email Notifications for New Features",
+    "description": "Implement email notifications to inform users about new features and updates to the platform.",
+    "upvotes": 32,
+    "downvotes": 8,
+    "priority": "Medium",
+    "author": {
+      "id": "4",
+      "name": "Danielle Brooks",
+      "profileImage": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    "createdAt": "2024-07-20T10:15:00Z",
+    "updatedAt": "2024-07-20T10:15:00Z"
   },
   {
     "id": 5,
-    "title": "Email Notification Preferences",
-    "description": "Provide granular control over email notifications.",
-    "upvotes": 95,
-    "downvotes": 5,
-    "createdAt": "2024-03-14T11:10:00Z",
-    "updatedAt": "2024-03-15T10:30:00Z"
+    "title": "Advanced Search Filters",
+    "description": "Enhance the search functionality with advanced filters to narrow down results based on specific criteria.",
+    "upvotes": 9,
+    "downvotes": 17,
+    "priority": "Medium",
+    "author": {
+      "id": "5",
+      "name": "Ethan Parker",
+      "profileImage": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    "createdAt": "2024-07-20T10:20:00Z",
+    "updatedAt": "2024-07-20T10:20:00Z"
   },
   {
     "id": 6,
-    "title": "Accessibility Improvements",
-    "description": "Enhance the application to meet WCAG guidelines.",
-    "upvotes": 110,
+    "title": "User Blocking Feature",
+    "description": "Allow users to block other users to prevent unwanted interactions and harassment.",
+    "upvotes": 22,
+    "downvotes": 31,
+    "priority": "High",
+    "author": {
+      "id": "6",
+      "name": "Fiona Mitchell",
+      "profileImage": "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    "createdAt": "2024-07-20T10:25:00Z",
+    "updatedAt": "2024-07-20T10:25:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Report User Feature",
+    "description": "Implement a reporting mechanism for users to report inappropriate content or behavior.",
+    "upvotes": 38,
+    "downvotes": 5,
+    "priority": "High",
+    "author": {
+      "id": "7",
+      "name": "George Hamilton",
+      "profileImage": "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    "createdAt": "2024-07-20T10:30:00Z",
+    "updatedAt": "2024-07-20T10:30:00Z"
+  },
+  {
+    "id": 8,
+    "title": "Mobile App (iOS and Android)",
+    "description": "Develop native mobile applications for iOS and Android platforms for better accessibility.",
+    "upvotes": 14,
+    "downvotes": 22,
+    "priority": "High",
+    "author": {
+      "id": "8",
+      "name": "Hannah Lee",
+      "profileImage": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    "createdAt": "2024-07-20T10:35:00Z",
+    "updatedAt": "2024-07-20T10:35:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Profile Verification Badges",
+    "description": "Introduce profile verification badges to authenticate genuine user profiles and build trust.",
+    "upvotes": 3,
+    "downvotes": 35,
+    "priority": "Medium",
+    "author": {
+      "id": "9",
+      "name": "Isaac Thompson",
+      "profileImage": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    "createdAt": "2024-07-20T10:40:00Z",
+    "updatedAt": "2024-07-20T10:40:00Z"
+  },
+  {
+    "id": 10,
+    "title": "Accessibility Improvements (WCAG Compliance)",
+    "description": "Improve platform accessibility to meet WCAG guidelines for users with disabilities.",
+    "upvotes": 27,
+    "downvotes": 19,
+    "priority": "Medium",
+    "author": {
+      "id": "10",
+      "name": "Jasmine Patel",
+      "profileImage": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    "createdAt": "2024-07-20T10:45:00Z",
+    "updatedAt": "2024-07-20T10:45:00Z"
+  },
+  {
+    "id": 11,
+    "title": "Personalized Recommendations",
+    "description": "Implement a recommendation system to suggest relevant content or users based on user activity.",
+    "upvotes": 11,
+    "downvotes": 28,
+    "priority": "Medium",
+    "author": {
+      "id": "1",
+      "name": "Alice Johnson",
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    "createdAt": "2024-07-20T10:50:00Z",
+    "updatedAt": "2024-07-20T10:50:00Z"
+  },
+  {
+    "id": 12,
+    "title": "Multi-Language Support",
+    "description": "Add support for multiple languages to cater to a global user base.",
+    "upvotes": 34,
+    "downvotes": 6,
+    "priority": "Medium",
+    "author": {
+      "id": "2",
+      "name": "Bob Smith",
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    "createdAt": "2024-07-20T10:55:00Z",
+    "updatedAt": "2024-07-20T10:55:00Z"
+  },
+  {
+    "id": 13,
+    "title": "Activity Feed on Profile",
+    "description": "Display an activity feed on user profiles to showcase recent actions and updates.",
+    "upvotes": 7,
+    "downvotes": 33,
+    "priority": "Low",
+    "author": {
+      "id": "3",
+      "name": "Charlie Davis",
+      "profileImage": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    "createdAt": "2024-07-20T11:00:00Z",
+    "updatedAt": "2024-07-20T11:00:00Z"
+  },
+  {
+    "id": 14,
+    "title": "Import/Export Profile Data",
+    "description": "Allow users to import or export their profile data for backup and portability.",
+    "upvotes": 21,
+    "downvotes": 11,
+    "priority": "Low",
+    "author": {
+      "id": "4",
+      "name": "Danielle Brooks",
+      "profileImage": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    "createdAt": "2024-07-20T11:05:00Z",
+    "updatedAt": "2024-07-20T11:05:00Z"
+  },
+  {
+    "id": 15,
+    "title": "Customizable Notification Settings",
+    "description": "Provide granular control over notification settings to allow users to customize alerts.",
+    "upvotes": 18,
+    "downvotes": 29,
+    "priority": "Medium",
+    "author": {
+      "id": "5",
+      "name": "Ethan Parker",
+      "profileImage": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    "createdAt": "2024-07-20T11:10:00Z",
+    "updatedAt": "2024-07-20T11:10:00Z"
+  },
+  {
+    "id": 16,
+    "title": "Profile Privacy Settings",
+    "description": "Implement profile privacy settings to control who can view profile information.",
+    "upvotes": 25,
+    "downvotes": 16,
+    "priority": "Medium",
+    "author": {
+      "id": "6",
+      "name": "Fiona Mitchell",
+      "profileImage": "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    "createdAt": "2024-07-20T11:15:00Z",
+    "updatedAt": "2024-07-20T11:15:00Z"
+  },
+  {
+    "id": 17,
+    "title": "User Groups/Communities",
+    "description": "Enable users to create and join groups or communities based on interests or topics.",
+    "upvotes": 39,
+    "downvotes": 2,
+    "priority": "Medium",
+    "author": {
+      "id": "7",
+      "name": "George Hamilton",
+      "profileImage": "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    "createdAt": "2024-07-20T11:20:00Z",
+    "updatedAt": "2024-07-20T11:20:00Z"
+  },
+  {
+    "id": 18,
+    "title": "Direct Messaging (DM)",
+    "description": "Implement a direct messaging feature for private communication between users.",
+    "upvotes": 4,
+    "downvotes": 37,
+    "priority": "High",
+    "author": {
+      "id": "8",
+      "name": "Hannah Lee",
+      "profileImage": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    "createdAt": "2024-07-20T11:25:00Z",
+    "updatedAt": "2024-07-20T11:25:00Z"
+  },
+  {
+    "id": 19,
+    "title": "Emoji Reactions",
+    "description": "Add emoji reactions to content for quick and expressive feedback.",
+    "upvotes": 31,
+    "downvotes": 9,
+    "priority": "Low",
+    "author": {
+      "id": "9",
+      "name": "Isaac Thompson",
+      "profileImage": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    "createdAt": "2024-07-20T11:30:00Z",
+    "updatedAt": "2024-07-20T11:30:00Z"
+  },
+  {
+    "id": 20,
+    "title": "GIF Support in Comments",
+    "description": "Enable users to include GIFs in comments to enhance communication and fun.",
+    "upvotes": 12,
+    "downvotes": 23,
+    "priority": "Low",
+    "author": {
+      "id": "10",
+      "name": "Jasmine Patel",
+      "profileImage": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    "createdAt": "2024-07-20T11:35:00Z",
+    "updatedAt": "2024-07-20T11:35:00Z"
+  },
+  {
+    "id": 21,
+    "title": "Voice Input for Text Fields",
+    "description": "Implement voice input functionality for text fields to improve input speed and accessibility.",
+    "upvotes": 29,
+    "downvotes": 15,
+    "priority": "Low",
+    "author": {
+      "id": "1",
+      "name": "Alice Johnson",
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    "createdAt": "2024-07-20T11:40:00Z",
+    "updatedAt": "2024-07-20T11:40:00Z"
+  },
+  {
+    "id": 22,
+    "title": "Undo/Redo Functionality in Text Editors",
+    "description": "Add undo and redo functionality in text editors for content creation.",
+    "upvotes": 5,
+    "downvotes": 30,
+    "priority": "Low",
+    "author": {
+      "id": "2",
+      "name": "Bob Smith",
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    "createdAt": "2024-07-20T11:45:00Z",
+    "updatedAt": "2024-07-20T11:45:00Z"
+  },
+  {
+    "id": 23,
+    "title": "Draft Saving for Content Creation",
+    "description": "Implement draft saving for content creation to prevent data loss and allow for editing later.",
+    "upvotes": 19,
+    "downvotes": 7,
+    "priority": "Medium",
+    "author": {
+      "id": "3",
+      "name": "Charlie Davis",
+      "profileImage": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    "createdAt": "2024-07-20T11:50:00Z",
+    "updatedAt": "2024-07-20T11:50:00Z"
+  },
+  {
+    "id": 24,
+    "title": "Scheduled Posting",
+    "description": "Allow users to schedule posts or content to be published at a later time.",
+    "upvotes": 36,
+    "downvotes": 14,
+    "priority": "Medium",
+    "author": {
+      "id": "4",
+      "name": "Danielle Brooks",
+      "profileImage": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    "createdAt": "2024-07-20T11:55:00Z",
+    "updatedAt": "2024-07-20T11:55:00Z"
+  },
+  {
+    "id": 25,
+    "title": "Content Tagging/Categorization",
+    "description": "Implement content tagging or categorization system for better organization and discovery.",
+    "upvotes": 24,
+    "downvotes": 21,
+    "priority": "Medium",
+    "author": {
+      "id": "5",
+      "name": "Ethan Parker",
+      "profileImage": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    "createdAt": "2024-07-20T12:00:00Z",
+    "updatedAt": "2024-07-20T12:00:00Z"
+  },
+  {
+    "id": 26,
+    "title": "Hashtag Support",
+    "description": "Introduce hashtag support to content for improved discoverability and trend tracking.",
+    "upvotes": 17,
+    "downvotes": 38,
+    "priority": "Medium",
+    "author": {
+      "id": "6",
+      "name": "Fiona Mitchell",
+      "profileImage": "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    "createdAt": "2024-07-20T12:05:00Z",
+    "updatedAt": "2024-07-20T12:05:00Z"
+  },
+  {
+    "id": 27,
+    "title": "Link Previews",
+    "description": "Generate link previews when users share URLs to provide context before clicking.",
+    "upvotes": 10,
+    "downvotes": 3,
+    "priority": "Low",
+    "author": {
+      "id": "7",
+      "name": "George Hamilton",
+      "profileImage": "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    "createdAt": "2024-07-20T12:10:00Z",
+    "updatedAt": "2024-07-20T12:10:00Z"
+  },
+  {
+    "id": 28,
+    "title": "Read Receipts in DMs",
+    "description": "Add read receipts in direct messages to indicate when messages have been seen.",
+    "upvotes": 37,
+    "downvotes": 26,
+    "priority": "Low",
+    "author": {
+      "id": "8",
+      "name": "Hannah Lee",
+      "profileImage": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    "createdAt": "2024-07-20T12:15:00Z",
+    "updatedAt": "2024-07-20T12:15:00Z"
+  },
+  {
+    "id": 29,
+    "title": "Typing Indicators in DMs",
+    "description": "Show typing indicators in direct messages to signal when someone is composing a message.",
+    "upvotes": 2,
+    "downvotes": 34,
+    "priority": "Low",
+    "author": {
+      "id": "9",
+      "name": "Isaac Thompson",
+      "profileImage": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    "createdAt": "2024-07-20T12:20:00Z",
+    "updatedAt": "2024-07-20T12:20:00Z"
+  },
+  {
+    "id": 30,
+    "title": "Pinned Messages in DMs/Groups",
+    "description": "Allow users to pin important messages in direct messages or groups for easy access.",
+    "upvotes": 20,
+    "downvotes": 1,
+    "priority": "Low",
+    "author": {
+      "id": "10",
+      "name": "Jasmine Patel",
+      "profileImage": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    "createdAt": "2024-07-20T12:25:00Z",
+    "updatedAt": "2024-07-20T12:25:00Z"
+  },
+  {
+    "id": 31,
+    "title": "Poll Feature",
+    "description": "Implement a poll feature for users to create and participate in polls within groups or communities.",
+    "upvotes": 26,
+    "downvotes": 36,
+    "priority": "Medium",
+    "author": {
+      "id": "1",
+      "name": "Alice Johnson",
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+    },
+    "createdAt": "2024-07-20T12:30:00Z",
+    "updatedAt": "2024-07-20T12:30:00Z"
+  },
+  {
+    "id": 32,
+    "title": "Event Scheduling Feature",
+    "description": "Add an event scheduling feature for users to organize and announce events.",
+    "upvotes": 13,
     "downvotes": 20,
-    "createdAt": "2024-03-13T16:55:00Z",
-    "updatedAt": "2024-03-14T14:10:00Z"
+    "priority": "Medium",
+    "author": {
+      "id": "2",
+      "name": "Bob Smith",
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    "createdAt": "2024-07-20T12:35:00Z",
+    "updatedAt": "2024-07-20T12:35:00Z"
+  },
+  {
+    "id": 33,
+    "title": "Integration with Third-Party Apps",
+    "description": "Enable integration with popular third-party applications and services.",
+    "upvotes": 40,
+    "downvotes": 40,
+    "priority": "Medium",
+    "author": {
+      "id": "3",
+      "name": "Charlie Davis",
+      "profileImage": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    "createdAt": "2024-07-20T12:40:00Z",
+    "updatedAt": "2024-07-20T12:40:00Z"
+  },
+  {
+    "id": 34,
+    "title": "API Access for Developers",
+    "description": "Provide API access for developers to build applications and integrations on top of the platform.",
+    "upvotes": 16,
+    "downvotes": 24,
+    "priority": "Medium",
+    "author": {
+      "id": "4",
+      "name": "Danielle Brooks",
+      "profileImage": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    "createdAt": "2024-07-20T12:45:00Z",
+    "updatedAt": "2024-07-20T12:45:00Z"
+  },
+  {
+    "id": 35,
+    "title": "Analytics Dashboard for Users",
+    "description": "Implement an analytics dashboard for users to track their engagement and content performance.",
+    "upvotes": 33,
+    "downvotes": 18,
+    "priority": "Low",
+    "author": {
+      "id": "5",
+      "name": "Ethan Parker",
+      "profileImage": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    "createdAt": "2024-07-20T12:50:00Z",
+    "updatedAt": "2024-07-20T12:50:00Z"
+  },
+  {
+    "id": 36,
+    "title": "Custom URL for Profiles",
+    "description": "Allow users to customize their profile URLs for easier sharing and branding.",
+    "upvotes": 8,
+    "downvotes": 32,
+    "priority": "Low",
+    "author": {
+      "id": "6",
+      "name": "Fiona Mitchell",
+      "profileImage": "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    "createdAt": "2024-07-20T12:55:00Z",
+    "updatedAt": "2024-07-20T12:55:00Z"
+  },
+  {
+    "id": 37,
+    "title": "Support for Different Profile Themes",
+    "description": "Offer a variety of profile themes for users to further customize their profiles.",
+    "upvotes": 23,
+    "downvotes": 27,
+    "priority": "Low",
+    "author": {
+      "id": "7",
+      "name": "George Hamilton",
+      "profileImage": "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    "createdAt": "2024-07-20T13:00:00Z",
+    "updatedAt": "2024-07-20T13:00:00Z"
+  },
+  {
+    "id": 38,
+    "title": "Profile Banner Image",
+    "description": "Allow users to add a banner image to their profile to enhance visual appeal.",
+    "upvotes": 1,
+    "downvotes": 4,
+    "priority": "Medium",
+    "author": {
+      "id": "8",
+      "name": "Hannah Lee",
+      "profileImage": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    "createdAt": "2024-07-20T13:05:00Z",
+    "updatedAt": "2024-07-20T13:05:00Z"
+  },
+  {
+    "id": 39,
+    "title": "Improved Image Upload Quality",
+    "description": "Enhance image upload quality and resolution to prevent compression artifacts.",
+    "upvotes": 30,
+    "downvotes": 35,
+    "priority": "Low",
+    "author": {
+      "id": "9",
+      "name": "Isaac Thompson",
+      "profileImage": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    "createdAt": "2024-07-20T13:10:00Z",
+    "updatedAt": "2024-07-20T13:10:00Z"
+  },
+  {
+    "id": 40,
+    "title": "Video Profile Introduction",
+    "description": "Allow users to upload a short video introduction on their profile for a more personal touch.",
+    "upvotes": 6,
+    "downvotes": 13,
+    "priority": "Medium",
+    "author": {
+      "id": "10",
+      "name": "Jasmine Patel",
+      "profileImage": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    "createdAt": "2024-07-20T13:15:00Z",
+    "updatedAt": "2024-07-20T13:15:00Z"
   }
 ]
