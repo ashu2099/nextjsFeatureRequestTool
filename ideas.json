@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Mobile App Offline Mode",
+    "description": "Enable users to access core features without an internet connection.",
+    "upvotes": 125,
+    "downvotes": 15,
+    "createdAt": "2024-03-18T10:00:00Z",
+    "updatedAt": "2024-03-19T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Integrate with Third-Party Calendar",
+    "description": "Allow users to sync events with their preferred calendar application.",
+    "upvotes": 88,
+    "downvotes": 22,
+    "createdAt": "2024-03-17T15:30:00Z",
+    "updatedAt": "2024-03-18T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Advanced Search Functionality",
+    "description": "Implement filters and sorting options for search results.",
+    "upvotes": 150,
+    "downvotes": 10,
+    "createdAt": "2024-03-16T08:45:00Z",
+    "updatedAt": "2024-03-17T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Customizable Dashboard Widgets",
+    "description": "Allow users to personalize their dashboard with relevant widgets.",
+    "upvotes": 65,
+    "downvotes": 35,
+    "createdAt": "2024-03-15T13:20:00Z",
+    "updatedAt": "2024-03-16T16:40:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Email Notification Preferences",
+    "description": "Provide granular control over email notifications.",
+    "upvotes": 95,
+    "downvotes": 5,
+    "createdAt": "2024-03-14T11:10:00Z",
+    "updatedAt": "2024-03-15T10:30:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Accessibility Improvements",
+    "description": "Enhance the application to meet WCAG guidelines.",
+    "upvotes": 110,
+    "downvotes": 20,
+    "createdAt": "2024-03-13T16:55:00Z",
+    "updatedAt": "2024-03-14T14:10:00Z"
+  }
+]

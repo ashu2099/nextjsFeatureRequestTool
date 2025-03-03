@@ -6,7 +6,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-import { fetchItems } from "../utils/api";
+import { fetchItems } from "@/utils/api";
 
 const queryClient = new QueryClient();
 
