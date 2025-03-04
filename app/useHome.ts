@@ -1,5 +1,5 @@
 import { FeatureRequest, VoteCollection } from "@/types/commons";
-import { deleteIdea, fetchItems } from "@/utils/api";
+import { deleteIdea, fetchFeatureRequests } from "@/utils/api";
 import { getVoteMap, updateVoteMap } from "@/utils/votes";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -31,7 +31,7 @@ export default function useHome(rowsPerPage: number) {
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["ideas", currentPage, rowsPerPage],
-    queryFn: fetchItems,
+    queryFn: fetchFeatureRequests,
   });
 
   const { mutate: deleteFeatureRequest } = useMutation({

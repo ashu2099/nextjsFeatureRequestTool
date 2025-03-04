@@ -2,11 +2,29 @@ import { NextResponse } from "next/server";
 
 import fs from "fs/promises";
 
-export async function GET(request: Request) {
-  try {
-    const fileContents = await fs.readFile("./employees.json", "utf8");
+const FILE_PATH = "./employees.json";
 
-    const data = JSON.parse(fileContents);
+const getEmployees = async () => {
+  const fileContents = await fs.readFile(FILE_PATH, "utf8");
+
+  return JSON.parse(fileContents);
+};
+
+export async function getEmployeeById(employeeId: string) {
+  try {
+    const fileContents = await getEmployees();
+
+    return fileContents[employeeId];
+  } catch (error) {
+    return error;
+  }
+}
+
+export async function GET() {
+  try {
+    const employeeMap = await getEmployees();
+
+    const data = Object.values(employeeMap);
 
     return NextResponse.json(data, {
       status: 200,

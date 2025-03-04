@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import { FeatureRequest } from "@/types/commons";
 
+import { getEmployeeById } from "../employees/route";
+
 const FILE_PATH = "./ideas.json";
 
 const getIdeas = async () => {
@@ -44,6 +46,46 @@ export async function GET(request: Request) {
         totalPages: Math.ceil(total / limit),
         totalItems: total,
         itemsPerPage: limit,
+      },
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (error) {
+    return NextResponse.json(error, { status: 500 });
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const input = await request.json();
+
+    const ideas = await getIdeas();
+
+    const requestingEmployee = await getEmployeeById(input.requestingEmployee);
+
+    const newIdea: FeatureRequest = {
+      id: ideas.length + 1,
+      author: requestingEmployee,
+      description: input.featureDescription,
+      title: input.featureSummary,
+      priority: input.requestPriority,
+      upvotes: 0,
+      downvotes: 0,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+
+    ideas.push(newIdea);
+
+    await fs.writeFile(FILE_PATH, JSON.stringify(ideas, null, 2));
+
+    return NextResponse.json(
+      {
+        success: true,
       },
       {
         status: 200,

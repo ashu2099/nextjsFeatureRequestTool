@@ -5,6 +5,8 @@ import { FeatureRequest } from "@/types/commons";
 import ProductRow from "@/components/product-row";
 import Paginator from "@/components/paginator";
 import useHome from "./useHome";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const ROWS_PER_PAGE = 10;
 
@@ -37,7 +39,14 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="p-4 border-gray-200 border-b">Ideas</h1>
+      <div className="p-4 flex justify-between items-center border-gray-200 border-b">
+        <h1 className="  ">Ideas</h1>
+        <Link href="new-feature-request">
+          <Button className="cursor-pointer" variant="default" size="sm">
+            Add New Feature Request
+          </Button>
+        </Link>
+      </div>
 
       <div className="w-full mx-auto">
         {data?.paginatedIdeas?.length > 0 &&
