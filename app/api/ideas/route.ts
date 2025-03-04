@@ -11,16 +11,47 @@ const getIdeas = async () => {
   return JSON.parse(fileContents);
 };
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const data = await getIdeas();
+    const ideas = await getIdeas();
 
-    return NextResponse.json(data, {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
+    const url = new URL(request.url);
+
+    const params = new URLSearchParams(url.search);
+
+    const page = parseInt(params.get("page")!);
+    const limit = parseInt(params.get("limit")!);
+    const total = ideas.length;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    if (startIndex >= total || isNaN(page) || isNaN(page)) {
+      return NextResponse.json({
+        status: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+
+    const paginatedIdeas = ideas.slice(startIndex, endIndex);
+
+    return NextResponse.json(
+      {
+        paginatedIdeas,
+        currentPage: page,
+        totalPages: Math.ceil(total / limit),
+        totalItems: total,
+        itemsPerPage: limit,
       },
-    });
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   } catch (error) {
     return NextResponse.json(error, { status: 500 });
   }
