@@ -17,6 +17,8 @@ export async function GET(request: Request) {
   try {
     const ideas = await getIdeas();
 
+    ideas.sort((a: FeatureRequest, b: FeatureRequest) => b.upvotes - a.upvotes);
+
     const url = new URL(request.url);
 
     const params = new URLSearchParams(url.search);
