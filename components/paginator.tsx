@@ -27,7 +27,7 @@ const Paginator = ({
   const [jumpInput, setJumpInput] = useState(0);
 
   return (
-    <div className="flex flex-col md:flex-row flex-wrap gap-2 items-center justify-center md:justify-between space-x-2 py-4">
+    <div className="flex flex-col md:flex-row flex-wrap gap-2 items-center justify-center md:justify-between space-x-2">
       <div className="flex items-center text-sm text-muted-foreground">
         <div className="mr-2">Page:</div>
         <Input

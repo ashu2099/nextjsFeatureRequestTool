@@ -37,9 +37,9 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col h-svh">
       <div className="p-4 flex justify-between items-center border-gray-200 border-b">
-        <h1 className="  ">Ideas</h1>
+        <h1 className="">Ideas</h1>
         <Link href="new-feature-request">
           <Button className="cursor-pointer" variant="default" size="sm">
             Add New Feature Request
@@ -47,21 +47,23 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="w-full mx-auto">
-        {data?.paginatedIdeas?.length > 0 &&
-          data?.paginatedIdeas?.map((request: Idea) => (
-            <ProductRow
-              key={request.id}
-              request={request}
-              voteMap={voteMap}
-              voteAnIdea={voteAnIdea}
-              deleteClicked={deleteFeatureRequest}
-              ideaClicked={navigateToFeatureDetails}
-            />
-          ))}
+      <div className="flex-1 overflow-y-scroll">
+        <div className="w-full mx-auto">
+          {data?.paginatedIdeas?.length > 0 &&
+            data?.paginatedIdeas?.map((request: Idea) => (
+              <ProductRow
+                key={request.id}
+                request={request}
+                voteMap={voteMap}
+                voteAnIdea={voteAnIdea}
+                deleteClicked={deleteFeatureRequest}
+                ideaClicked={navigateToFeatureDetails}
+              />
+            ))}
+        </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 border-t">
         <Paginator
           total={data?.totalItems}
           currentPage={currentPage}
