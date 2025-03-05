@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ThumbsDown, ThumbsUp, X } from "lucide-react";
+import { ThumbsDown, ThumbsUp, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Idea, VoteCollection } from "@/types/commons";
@@ -8,13 +8,13 @@ export default function ProductRow({
   request,
   voteMap,
   voteAnIdea,
-  deleteFeatureRequest,
+  deleteClicked,
   ideaClicked,
 }: {
   request: Idea;
   voteMap: VoteCollection;
   voteAnIdea: (...args: (boolean | Idea)[]) => void;
-  deleteFeatureRequest: (id: string) => void;
+  deleteClicked: (id: string) => void;
   ideaClicked: (id: string) => void;
 }) {
   return (
@@ -102,9 +102,12 @@ export default function ProductRow({
         <Button
           variant="outline"
           size="icon"
-          onClick={() => deleteFeatureRequest(request.id)}
+          onClick={(event) => {
+            deleteClicked(request.id);
+            event.stopPropagation();
+          }}
         >
-          <X />
+          <Trash2 />
         </Button>
       </div>
     </div>

@@ -12,6 +12,9 @@ import { Button } from "./ui/button";
 export default function FeatureRequestUpdateDialogue({
   isOpen,
   interactionCallback,
+}: {
+  isOpen: boolean;
+  interactionCallback: (_: boolean) => void;
 }) {
   return (
     <Dialog open={isOpen}>

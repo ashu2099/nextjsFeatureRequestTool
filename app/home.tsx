@@ -54,7 +54,7 @@ export default function Home() {
               request={request}
               voteMap={voteMap}
               voteAnIdea={voteAnIdea}
-              deleteFeatureRequest={deleteFeatureRequest}
+              deleteClicked={deleteFeatureRequest}
               ideaClicked={navigateToFeatureDetails}
             />
           ))}

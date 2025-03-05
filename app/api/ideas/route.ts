@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import fs from "fs/promises";
 import { Idea } from "@/types/commons";
@@ -113,13 +113,21 @@ export async function POST(request: Request) {
   }
 }
 
-export async function DELETE(request: Request) {
+export async function DELETE(request: NextRequest) {
   try {
-    const idToDelete = request.url.slice(request?.url?.indexOf("=") + 1);
+    const deletionId = request.nextUrl.searchParams.get("deletionId");
 
-    let data = await getIdeas();
+    if (!deletionId) {
+      throw new Error("No Id Found");
+    }
 
-    data = data.filter((idea: Idea) => idea.id !== idToDelete);
+    const data = await getIdeas();
+
+    if (!data[deletionId]) {
+      throw new Error("Record dosen't Exist");
+    }
+
+    delete data[deletionId];
 
     await fs.writeFile(FILE_PATH, JSON.stringify(data, null, 2));
 

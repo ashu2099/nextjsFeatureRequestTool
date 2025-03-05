@@ -3,6 +3,15 @@ import { Button } from "./ui/button";
 
 import { Input } from "./ui/input";
 
+type PaginatorType = {
+  total: number;
+  currentPage: number;
+  maxPages: number;
+  jumpToPageCb: (_: number) => void;
+  prevPageCb: () => void;
+  nextPageCb: () => void;
+};
+
 const Paginator = ({
   total,
   currentPage,
@@ -10,12 +19,12 @@ const Paginator = ({
   jumpToPageCb,
   prevPageCb,
   nextPageCb,
-}) => {
+}: PaginatorType) => {
   useEffect(() => {
     setJumpInput(currentPage);
   }, [currentPage]);
 
-  const [jumpInput, setJumpInput] = useState("");
+  const [jumpInput, setJumpInput] = useState(0);
 
   return (
     <div className="flex flex-col md:flex-row flex-wrap gap-2 items-center justify-center md:justify-between space-x-2 py-4">
@@ -28,7 +37,9 @@ const Paginator = ({
           max={maxPages}
           value={jumpInput}
           onChange={(e) => {
-            setJumpInput(e.target.value);
+            if (parseInt(e.target.value)) {
+              setJumpInput(parseInt(e.target.value));
+            }
           }}
         />
 
@@ -57,7 +68,7 @@ const Paginator = ({
         <Button
           size="sm"
           onClick={nextPageCb}
-          disabled={currentPage === maxPages}
+          disabled={currentPage >= maxPages}
         >
           Next
         </Button>
