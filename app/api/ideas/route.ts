@@ -3,21 +3,9 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import { Idea } from "@/types/commons";
 
-import { getEmployeeById } from "../employees/route";
+import { FILE_PATH, getIdeas } from "./helper";
 
-const FILE_PATH = "./ideas.json";
-
-const getIdeas = async () => {
-  const fileContents = await fs.readFile(FILE_PATH, "utf8");
-
-  return JSON.parse(fileContents);
-};
-
-export const getIdeaById = async (idToGet: string) => {
-  const ideasMap = await getIdeas();
-
-  return ideasMap[idToGet] || null;
-};
+import { getEmployeeById } from "../employees/helper";
 
 export async function GET(request: Request) {
   try {

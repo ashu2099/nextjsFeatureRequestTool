@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getIdeaById } from "../route";
+import { getIdeaById } from "../helper";
 
 export async function GET(
   request: Request,
