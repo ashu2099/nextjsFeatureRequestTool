@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Calendar, Clock, ThumbsDown, ThumbsUp } from "lucide-react";
 import { Idea } from "@/types/commons";
+import Loader from "./loader";
 
 const priorityColors: { [key: string]: string } = {
   High: "bg-red-100 text-red-800 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-400",
@@ -29,7 +30,7 @@ export default function FeatureDetailsCard({
   featureRequest: Idea;
 }) {
   if (!featureRequest) {
-    return <>Loading Feature Details...</>;
+    return <Loader />;
   }
 
   return (

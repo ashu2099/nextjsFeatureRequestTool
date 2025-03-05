@@ -7,6 +7,7 @@ import Paginator from "@/components/paginator";
 import useHome from "./useHome";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Loader from "@/components/loader";
 
 const ROWS_PER_PAGE = 10;
 
@@ -27,11 +28,7 @@ export default function Home() {
   } = useHome(ROWS_PER_PAGE);
 
   if (isLoading) {
-    return (
-      <div className="flex flex-col flex-1 items-center justify-center">
-        <div className="animate-spin rounded-full border-t-2 border-gray-500 w-32 h-32 border-b-2"></div>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (isError) {
