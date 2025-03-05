@@ -1,11 +1,14 @@
-import { FeatureRequest, VoteCollection } from "@/types/commons";
+import { Idea, VoteCollection } from "@/types/commons";
 import { deleteIdea, fetchFeatureRequests } from "@/utils/api";
 import { getVoteMap, updateVoteMap } from "@/utils/votes";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function useHome(rowsPerPage: number) {
   const queryClient = useQueryClient();
+
+  const router = useRouter();
 
   const [voteMap, setVoteMap] = useState<VoteCollection>({});
 
@@ -41,9 +44,13 @@ export default function useHome(rowsPerPage: number) {
     },
   });
 
-  const voteAnIdea = (...args: (boolean | FeatureRequest)[]) => {
+  const voteAnIdea = (...args: (boolean | Idea)[]) => {
     updateVoteMap(...args);
     setVoteMap(getVoteMap());
+  };
+
+  const navigateToFeatureDetails = (featureId: string) => {
+    router.push(`/feature-details/${featureId}`);
   };
 
   useEffect(() => {
@@ -62,5 +69,6 @@ export default function useHome(rowsPerPage: number) {
     error,
     deleteFeatureRequest,
     voteAnIdea,
+    navigateToFeatureDetails,
   };
 }

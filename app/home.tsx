@@ -1,6 +1,6 @@
 "use client";
 
-import { FeatureRequest } from "@/types/commons";
+import { Idea } from "@/types/commons";
 
 import ProductRow from "@/components/product-row";
 import Paginator from "@/components/paginator";
@@ -23,6 +23,7 @@ export default function Home() {
     error,
     deleteFeatureRequest,
     voteAnIdea,
+    navigateToFeatureDetails,
   } = useHome(ROWS_PER_PAGE);
 
   if (isLoading) {
@@ -50,13 +51,14 @@ export default function Home() {
 
       <div className="w-full mx-auto">
         {data?.paginatedIdeas?.length > 0 &&
-          data?.paginatedIdeas?.map((request: FeatureRequest) => (
+          data?.paginatedIdeas?.map((request: Idea) => (
             <ProductRow
               key={request.id}
               request={request}
               voteMap={voteMap}
               voteAnIdea={voteAnIdea}
               deleteFeatureRequest={deleteFeatureRequest}
+              ideaClicked={navigateToFeatureDetails}
             />
           ))}
       </div>

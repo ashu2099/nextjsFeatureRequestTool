@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import fs from "fs/promises";
-import { FeatureRequest } from "@/types/commons";
+import { Idea } from "@/types/commons";
 
 import { getEmployeeById } from "../employees/route";
 
@@ -13,11 +13,19 @@ const getIdeas = async () => {
   return JSON.parse(fileContents);
 };
 
+export const getIdeaById = async (idToGet: string) => {
+  const ideasMap = await getIdeas();
+
+  return ideasMap[idToGet] || null;
+};
+
 export async function GET(request: Request) {
   try {
-    const ideas = await getIdeas();
+    const ideasMap = await getIdeas();
 
-    ideas.sort((a: FeatureRequest, b: FeatureRequest) => b.upvotes - a.upvotes);
+    const ideas: Idea[] = Object.values(ideasMap);
+
+    ideas.sort((a: Idea, b: Idea) => b.upvotes - a.upvotes);
 
     const url = new URL(request.url);
 
@@ -65,25 +73,29 @@ export async function POST(request: Request) {
   try {
     const input = await request.json();
 
-    const ideas = await getIdeas();
+    const ideasMap = await getIdeas();
 
     const requestingEmployee = await getEmployeeById(input.requestingEmployee);
 
-    const newIdea: FeatureRequest = {
-      id: ideas.length + 1,
+    const ideaDate = new Date();
+
+    const ideaId = String(ideaDate.getTime());
+
+    const newIdea: Idea = {
+      id: ideaId,
       author: requestingEmployee,
       description: input.featureDescription,
       title: input.featureSummary,
       priority: input.requestPriority,
       upvotes: 0,
       downvotes: 0,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
+      createdAt: ideaDate.toISOString(),
+      updatedAt: ideaDate.toISOString(),
     };
 
-    ideas.push(newIdea);
+    ideasMap[ideaId] = newIdea;
 
-    await fs.writeFile(FILE_PATH, JSON.stringify(ideas, null, 2));
+    await fs.writeFile(FILE_PATH, JSON.stringify(ideasMap, null, 2));
 
     return NextResponse.json(
       {
@@ -107,9 +119,7 @@ export async function DELETE(request: Request) {
 
     let data = await getIdeas();
 
-    data = data.filter(
-      (idea: FeatureRequest) => idea.id !== parseInt(idToDelete)
-    );
+    data = data.filter((idea: Idea) => idea.id !== idToDelete);
 
     await fs.writeFile(FILE_PATH, JSON.stringify(data, null, 2));
 

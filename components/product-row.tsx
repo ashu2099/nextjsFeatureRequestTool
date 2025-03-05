@@ -2,23 +2,26 @@ import { cn } from "@/lib/utils";
 import { ThumbsDown, ThumbsUp, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { FeatureRequest, VoteCollection } from "@/types/commons";
+import { Idea, VoteCollection } from "@/types/commons";
 
 export default function ProductRow({
   request,
   voteMap,
   voteAnIdea,
   deleteFeatureRequest,
+  ideaClicked,
 }: {
-  request: FeatureRequest;
+  request: Idea;
   voteMap: VoteCollection;
-  voteAnIdea: (...args: (boolean | FeatureRequest)[]) => void;
-  deleteFeatureRequest: (id: number) => void;
+  voteAnIdea: (...args: (boolean | Idea)[]) => void;
+  deleteFeatureRequest: (id: string) => void;
+  ideaClicked: (id: string) => void;
 }) {
   return (
     <div
       key={request.id}
       className="flex justify-between items-center bg-white p-6 border-b border-gray-200 hover:bg-gray-100 transition-shadow duration-200"
+      onClick={() => ideaClicked(request.id)}
     >
       <div className="flex flex-col space-y-3">
         <h3 className="text-lg font-semibold text-gray-900">{request.title}</h3>

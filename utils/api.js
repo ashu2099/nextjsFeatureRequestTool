@@ -20,6 +20,16 @@ export const fetchFeatureRequests = async (queryData) => {
   return response.json();
 };
 
+export const fetchFeatureRequestsById = async (id) => {
+  const response = await fetch(`/api/ideas/${id}`);
+
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  return response.json();
+};
+
 export const addIdea = async (ideaToBeAdded) => {
   const response = await fetch(`/api/ideas`, {
     method: "POST",

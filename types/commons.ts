@@ -4,8 +4,8 @@ export interface UserProfile {
   profileImage: string;
 }
 
-export interface FeatureRequest {
-  id: number;
+export interface Idea {
+  id: string;
   title: string;
   description: string;
   upvotes: number;
