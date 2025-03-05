@@ -8,6 +8,7 @@ import useHome from "./useHome";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Loader from "@/components/loader";
+import useVoteMap from "./useVoteMap";
 
 const ROWS_PER_PAGE = 10;
 
@@ -17,15 +18,15 @@ export default function Home() {
     jumpToPage,
     prevPage,
     nextPage,
-    voteMap,
     data,
     isLoading,
     isError,
     error,
     deleteFeatureRequest,
-    voteAnIdea,
     navigateToFeatureDetails,
   } = useHome(ROWS_PER_PAGE);
+
+  const { voteMap, voteAnIdea } = useVoteMap();
 
   if (isLoading) {
     return <Loader />;

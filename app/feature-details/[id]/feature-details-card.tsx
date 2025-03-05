@@ -9,7 +9,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Calendar, Clock, ThumbsDown, ThumbsUp } from "lucide-react";
 import { Idea } from "@/types/commons";
-import Loader from "./loader";
+import Loader from "@/components/loader";
+import { cn } from "@/lib/utils";
+import useVoteMap from "@/app/useVoteMap";
 
 const priorityColors: { [key: string]: string } = {
   High: "bg-red-100 text-red-800 hover:bg-red-100 dark:bg-red-900/30 dark:text-red-400",
@@ -29,6 +31,8 @@ export default function FeatureDetailsCard({
 }: {
   featureRequest: Idea;
 }) {
+  const { voteMap, voteAnIdea } = useVoteMap();
+
   if (!featureRequest) {
     return <Loader />;
   }
@@ -50,15 +54,52 @@ export default function FeatureDetailsCard({
           </div>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
-              <ThumbsUp className="h-4 w-4 text-green-500" />
-              <span className="text-sm font-medium">
-                {featureRequest.upvotes}
+              <span
+                className={cn("text-sm font-medium cursor-pointer", {
+                  "fill-green-600": voteMap?.[featureRequest.id]?.upvoted,
+                })}
+              >
+                <ThumbsUp
+                  className="w-5 h-5 text-green-600"
+                  onClick={() => {
+                    voteAnIdea(featureRequest, true, false);
+                  }}
+                  fill={
+                    voteMap?.[featureRequest.id]?.upvoted
+                      ? "fill-green-600"
+                      : "transparent"
+                  }
+                />
+              </span>
+
+              <span className="text-sm text-gray-800">
+                {featureRequest.upvotes +
+                  (voteMap?.[featureRequest.id]?.upvoted ? 1 : 0)}
               </span>
             </div>
+
             <div className="flex items-center space-x-1">
-              <ThumbsDown className="h-4 w-4 text-red-500" />
-              <span className="text-sm font-medium">
-                {featureRequest.downvotes}
+              <span
+                className={cn("text-sm font-medium cursor-pointer", {
+                  "fill-red-600": voteMap?.[featureRequest.id]?.downvoted,
+                })}
+              >
+                <ThumbsDown
+                  className="w-5 h-5 text-red-600"
+                  onClick={() => {
+                    voteAnIdea(featureRequest, false, true);
+                  }}
+                  fill={
+                    voteMap?.[featureRequest.id]?.downvoted
+                      ? "fill-red-600"
+                      : "transparent"
+                  }
+                />
+              </span>
+
+              <span className="text-sm text-gray-800">
+                {featureRequest.downvotes +
+                  (voteMap?.[featureRequest?.id]?.downvoted ? 1 : 0)}
               </span>
             </div>
           </div>

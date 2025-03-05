@@ -21,7 +21,6 @@ export default function ProductRow({
     <div
       key={request.id}
       className="flex justify-between items-center bg-white p-6 border-b border-gray-200 hover:bg-gray-100 transition-shadow duration-200"
-      onClick={() => ideaClicked(request.id)}
     >
       <div className="flex flex-col space-y-3">
         <h3 className="text-lg font-semibold text-gray-900">{request.title}</h3>
@@ -98,14 +97,20 @@ export default function ProductRow({
         </div>
       </div>
 
-      <div className="">
+      <div className="flex gap-2">
         <Button
           variant="outline"
+          size="default"
+          onClick={() => ideaClicked(request.id)}
+        >
+          Details
+        </Button>
+
+        <Button
+          variant="outline"
+          className="border-red-400  text-red-400 hover:text-red-600"
           size="icon"
-          onClick={(event) => {
-            deleteClicked(request.id);
-            event.stopPropagation();
-          }}
+          onClick={() => deleteClicked(request.id)}
         >
           <Trash2 />
         </Button>

@@ -3,7 +3,7 @@
 import { ArrowLeft } from "lucide-react";
 import useFeatureRequestDisplay from "./useFeatureRequestDisplay";
 import { Button } from "@/components/ui/button";
-import FeatureDetailsCard from "@/components/feature-details-card";
+import FeatureDetailsCard from "./feature-details-card";
 import Link from "next/link";
 
 export default function FeatureRequestDisplay() {
