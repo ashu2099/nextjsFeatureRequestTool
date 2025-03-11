@@ -1,7 +1,6 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
-#### Note: I used npm in this project, as pnpm is not allowed to be installed on my laptop by current company.
 
 First, run the development server:
 
